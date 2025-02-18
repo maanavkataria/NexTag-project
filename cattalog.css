@@ -1,0 +1,194 @@
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    margin: 50px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex-wrap: wrap; 
+}
+
+.offer-banner {
+    background-color: brown;
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    margin-bottom: 20px; 
+}
+
+.product-image img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    font-size: 50px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+input[type="radio"] {
+    display: none; 
+}
+
+input[type="radio"]:checked ~ .star {
+    color: #FFD700; 
+}
+
+input[type="radio"]:hover ~ .star,
+input[type="radio"]:checked:hover ~ .star {
+    color: #FFCC00; 
+}
+
+input[type="radio"]:checked ~ .star:hover {
+    color: #FFD700;
+}
+
+input[type="radio"]:not(:checked) ~ .star:hover {
+    color: #FFCC00;
+}
+
+input[type="radio"]:checked + label ~ .star {
+    color: #FFD700; 
+}
+
+.product-details {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.product-details h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.product-image img {
+    max-width: 100%;  
+    height: auto;  
+    border-radius: 8px;
+}
+
+.product-price {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.product-price .price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.add-to-cart-btn, .buy-now {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.add-to-cart-btn:hover, .buy-now:hover {
+    background-color: #2980b9;
+}
+
+.add-to-cart-btn:active, .buy-now:active {
+    background-color: #1f6f8c;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .product-container {
+        margin: 20px; 
+        padding: 20px; 
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .product-image img {
+        max-width: 80%;
+    }
+
+    .product-details {
+        padding-left: 0;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .add-to-cart-btn, .buy-now {
+        width: 90%; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .product-container {
+        margin: 10px;
+        padding: 15px; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image img {
+        max-width: 100%; 
+        height: auto;
+    }
+
+    .product-details {
+        padding-left: 0;
+        text-align: center; 
+    }
+
+    .add-to-cart-btn, .buy-now {
+        width: 95%; 
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .product-image img {
+        max-width: 600px; 
+        width: 100%; 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .product-image img {
+        max-width: 80%; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .product-image img {
+        max-width: 100%; 
+    }
+}
+

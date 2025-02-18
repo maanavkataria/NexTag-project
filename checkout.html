@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | NexTag</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/x-icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57e_MjsCKYYivykuCgu9tXOYq4fKNYF4E9w&s">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            margin: auto;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        #total-amount {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cotainer">
+        <div class="header">
+            <header>
+                <div class="logo">
+                    <h4>NexTag</h4>
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <ul id="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="#">Categories</a>
+                            <div class="dropdown-content">
+                                <a href="male.html">Male</a>
+                                <a href="female.html">Female</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#">Shop By Brands</a>
+                            <div class="dropdown-content">
+                                <a href="lv.html">Louis Vitton</a>
+                                <a href="gucci.html">Gucci</a>
+                                <a href="prada.html">Prada</a>
+                                <a href="michael_kors.html">Michael Kors</a>
+                                <a href="balenciaga.html">Balenciaga</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="login-register">
+                    <a href="login.html"><button>Login</button></a>
+                    <a href="register.html"><button>Register</button></a>
+                </div>
+            </header>
+        </div>
+
+        <h2>Checkout</h2>
+        <p id="total-amount">Total Amount: $0.00</p>
+        <form id="checkout-form">
+            <label>Name:</label>
+            <input type="text" id="name" required>
+            <label>Phone Number:</label>
+            <input type="text" id="phone_number" required>
+            <label>Street:</label>
+            <input type="text" id="street" required>
+            <label>Postal Code:</label>
+            <input type="text" id="postal_code" required>
+            <label>City:</label>
+            <input type="text" id="city" required>
+            <label>Complete Address:</label>
+            <input type="text" id="address" required>
+            <label>Payment Method:</label>
+            <select id="payment-method" onchange="showPaymentFields()">
+                <option value="">Select Payment Method</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="easypaisa">Easypaisa</option>
+                <option value="jazzcash">JazzCash</option>
+                <option value="cod">Cash on Delivery</option>
+            </select>
+
+            <div id="card-info" class="hidden">
+                <label>Card Number:</label>
+                <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX">
+                <label>Expiry Date:</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY">
+                <label>CVV:</label>
+                <input type="text" id="cvv" placeholder="123">
+            </div>
+
+            <div id="easypaisa-info" class="hidden">
+                <label>Easypaisa Account Number:</label>
+                <input type="text" id="easypaisa-number" placeholder="03XXXXXXXXX">
+            </div>
+
+            <div id="jazzcash-info" class="hidden">
+                <label>JazzCash Account Number:</label>
+                <input type="text" id="jazzcash-number" placeholder="03XXXXXXXXX">
+            </div>
+
+            <div id="cod-info" class="hidden">
+                <p>Cash on Delivery is available. Please have the exact amount ready.</p>
+            </div>
+
+            <button type="submit" class="btn">Confirm Order</button>
+        </form>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Our Policies</h3>
+                    <ul>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="return_policy.html">Return Policy</a></li>
+                        <li><a href="shipping_policy.html">Shipping Policy</a></li>
+                        <li><a href="terms_of_services.html">Terms Of Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Phone: +92 313 7248497</li>
+                        <li>Email: maanavkataria@gmail.com</li>
+                        <li>Address: 30-A, Progressive Center, Karachi, Pakistan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/maanav.mukesh.kataria"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/maanav.mukesh.kataria/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/maanavkataria"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NexTag. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        function updateTotalAmount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('total-amount').textContent = `Total Amount: $${total.toFixed(2)}`;
+        }
+
+        document.getElementById('payment-method').addEventListener('change', function () {
+            let cardInfo = document.getElementById('card-info');
+            let easypaisaInfo = document.getElementById('easypaisa-info');
+            let jazzcashInfo = document.getElementById('jazzcash-info');
+            let codInfo = document.getElementById('cod-info');
+
+            cardInfo.classList.add('hidden');
+            easypaisaInfo.classList.add('hidden');
+            jazzcashInfo.classList.add('hidden');
+            codInfo.classList.add('hidden');
+
+            if (this.value === 'card') {
+                cardInfo.classList.remove('hidden');
+            } else if (this.value === 'easypaisa') {
+                easypaisaInfo.classList.remove('hidden');
+            } else if (this.value === 'jazzcash') {
+                jazzcashInfo.classList.remove('hidden');
+            } else if (this.value === 'cod') {
+                codInfo.classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('checkout-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Order Confirmed!');
+            localStorage.removeItem('cart'); // Clear cart after order
+            window.location.href = 'index.html'; // Redirect to home page
+        });
+
+        updateTotalAmount();
+    </script>
+</body>
+
+</html>

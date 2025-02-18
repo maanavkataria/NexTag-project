@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    width: 40%;
+    height: 350px;
+    margin: 150px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px black;
+}
+
+form h1{
+    text-align: center;
+    font-size: 50px;
+    color: blueviolet;
+}
+
+form hr{
+    background-color: blueviolet;
+    width: 80%;
+    height: 5px;
+    border-radius: 5px;
+    margin: auto;
+    text-decoration: double;
+}
+
+form label{
+    width: 300px;
+    height: 30px;
+    margin-left: 22%;
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+form input{
+    border-radius: 5px;
+    width: 250px;
+    height: 20px;
+}
+
+::placeholder{
+    text-align: center;
+}
+
+form>:nth-child(22){
+    width: 200px;
+    margin-left: 30%;
+    height: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}

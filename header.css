@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow elements to wrap on small screens */
+}
+
+/* Logo styles */
+.logo h4 {
+    color: white;
+    font-size: 24px;
+    margin-right: 20px;
+    flex: 1;
+}
+
+/* Hamburger menu styles - moved to right */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;  /* Position it anywhere on the screen */
+    right: 20px;         /* Move it to the right */
+    top: 20px;           /* Keep it aligned to the top */
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+/* .nav {
+    flex: 2;
+} */
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    margin: 0 10px; /* Reduced the margin to reduce the gap */
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    background-color: #555;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-bar i {
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Login and Register buttons */
+.login-register {
+    display: flex;
+    gap: 15px;
+}
+
+.login-register button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-register button:hover {
+    background-color: #777;
+}
+
+/* Mobile and small screen styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    /* Hide nav links by default on small screens */
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Show nav links when menu is active */
+    .nav ul.active {
+        display: block;
+    }
+
+    .nav ul li {
+        margin: 10px 0;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .login-register {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .login-register button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Show hamburger menu on mobile */
+    .menu-toggle {
+        display: flex;
+    }
+}
+footer{}
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-section h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .footer-section ul li a {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <header>
+            <div class="logo">
+                <h4>NexTag</h4>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Categories</a>
+                        <div class="dropdown-content">
+                            <a href="male.html">Male</a>
+                            <a href="female.html">Female</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#">Shop By Brands</a>
+                        <div class="dropdown-content">
+                            <a href="lv.html">Louis Vitton</a>
+                            <a href="gucci.html">Gucci</a>
+                            <a href="prada.html">Prada</a>
+                            <a href="michael_kors.html">Michael Kors</a>
+                            <a href="balenciaga.html">Balenciaga</a>
+                        </div>
+                    </li>
+                </ul>
+                
+            </nav>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="login-register">
+                <a href="login.html"><button>Login</button></a>
+                <a href="register.html"><button>Register</button></a>
+            </div>
+        </header>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Phone: +92 313 7248497</li>
+                    <li>Email: maanavkataria@gmail.com</li>
+                    <li>Address: 30-A, Progressive Center, Karachi, Pakistan</li>
+                </ul>
+            </div>
+    
+            <!-- Social Media -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/18T9jdDrWY" target=""><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tahamagsi14/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/maanavkataria" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 NexTag. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Toggle the navigation menu on mobile when the hamburger icon is clicked
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');  // Add or remove 'active' class to show/hide the menu
+});
+
+    </script>
+</body>
+</html>

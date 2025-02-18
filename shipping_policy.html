@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Policy | NexTag</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="policies.css">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57e_MjsCKYYivykuCgu9tXOYq4fKNYF4E9w&s">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jersey+15&family=Kavivanar&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Sixtyfour+Convergence&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <header>
+                <div class="logo">
+                    <h4>NexTag</h4>
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <ul id="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="#">Categories</a>
+                            <div class="dropdown-content">
+                                <a href="male.html">Male</a>
+                                <a href="female.html">Female</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#">Shop By Brands</a>
+                            <div class="dropdown-content">
+                                <a href="lv.html">Louis Vitton</a>
+                                <a href="gucci.html">Gucci</a>
+                                <a href="prada.html">Prada</a>
+                                <a href="michael_kors.html">Michael Kors</a>
+                                <a href="balenciaga.html">Balenciaga</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="login-register">
+                    <a href="login.html"><button>Login</button></a>
+                    <a href="register.html"><button>Register</button></a>
+                </div>
+            </header>
+        </div>
+
+        <div class="policy-container">
+            <h1>Shipping Policy</h1>
+            <p>Effective Date: 18/02/2025</p>
+            <p>At NexTag, we ensure timely and secure delivery of your orders. Below are our shipping terms:</p>
+            
+            <h2>1. Shipping Time</h2>
+            <p>Orders are processed within 2-3 business days. Delivery times vary by location and shipping method selected.</p>
+            
+            <h2>2. Shipping Costs</h2>
+            <p>Shipping charges are calculated at checkout. Free shipping is available for orders over a certain amount.</p>
+            
+            <h2>3. International Shipping</h2>
+            <p>We offer worldwide shipping. International customers are responsible for any customs duties or taxes.</p>
+            
+            <h2>4. Tracking Orders</h2>
+            <p>Once your order ships, you will receive a tracking number via email.</p>
+            
+            <h2>5. Delayed or Lost Shipments</h2>
+            <p>If your order is delayed or lost, please contact us, and we will assist you in resolving the issue.</p>
+            
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions about our Terms of Service, please contact us at <b>maanavkataria@gmail.com | khaliltaha116@gmail.com | asfardhamyal20@gmail.com | opicarlo4456@gmail.com</b> or <b>30-A, Progressive Center, Karachi, Pakistan</b>.</p>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Our Policies</h3>
+                    <ul>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="return_policy.html">Return Policy</a></li>
+                        <li><a href="shipping_policy.html">Shipping Policy</a></li>
+                        <li><a href="terms_of_services.html">Terms Of Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Phone: +92 313 7248497</li>
+                        <li>Email: maanavkataria@gmail.com</li>
+                        <li>Address: 30-A, Progressive Center, Karachi, Pakistan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/maanav.mukesh.kataria"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/maanav.mukesh.kataria/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/maanavkataria"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NexTag. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

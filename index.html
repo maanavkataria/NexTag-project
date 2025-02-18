@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexTag - A universe of Purses & Wallets</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57e_MjsCKYYivykuCgu9tXOYq4fKNYF4E9w&s">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jersey+15&family=Kavivanar&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Sixtyfour+Convergence&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.brand_logo {
+    flex: 1 1 20%; 
+    box-sizing: border-box; 
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; 
+}
+
+.brand_logo img {
+    width: 100%;
+    height: auto;
+    display: block; 
+    object-fit: contain;
+}
+
+.brand_logo:hover {
+    transform: scale(1.05);
+}
+
+.brand_logos {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .brand_logo {
+        flex: 1 1 45%; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .brand_logo {
+        flex: 1 1 90%; 
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <header>
+                <div class="logo">
+                    <h4>NexTag</h4>
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                
+                <nav class="nav">
+                    <ul id="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="#">Categories</a>
+                            <div class="dropdown-content">
+                                <a href="male.html">Male</a>
+                                <a href="female.html">Female</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#">Shop By Brands</a>
+                            <div class="dropdown-content">
+                                <a href="lv.html">Louis Vitton</a>
+                                <a href="gucci.html">Gucci</a>
+                                <a href="prada.html">Prada</a>
+                                <a href="michael_kors.html">Michael Kors</a>
+                                <a href="balenciaga.html">Balenciaga</a>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </nav>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="login-register">
+                    <a href="login.html"><button>Login</button></a>
+                    <a href="register.html"><button>Register</button></a>
+                </div>
+            </header>
+        </div>
+
+        <section class="banner">
+            <div class="banner_img">
+                <img src="Banner.jpg" alt="Welcome Banner">
+            </div>
+        </section>
+
+        <br><br>
+        <section class="categories">
+            <h1 class="h-primary text-center">Our Categories</h1>
+            <hr><br><br>
+            <div class="row">
+                <div class="card">
+                    <img src="Wallets.jpg" alt="Male">
+                    <h2 class="h-secondary text-center">Men's Wallets</h2>
+                    <button>
+                        <a href="male.html">Explore Now</a>
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img src="Purses.jpg" alt="Female">
+                    <h2 class="h-secondary text-center">Women's Purses</h2>
+                    <button>
+                        <a href="female.html">Explore Now</a>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="products_section">
+            <h1 class="h-primary text-center">Our Products</h1>
+            <hr><br><br>
+            <div class="cart-container" onclick="viewCart()">
+                <div class="cart-icon">
+                    <span id="cart-count">0</span>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+
+            <div id="cart-page" class="cart-page" style="display: none;">
+                <h2>Shopping Cart</h2>
+                <div id="cart-items"></div>
+                <div class="empty-cart" id="empty-message" style="display: none;">
+                    <p>Your cart is empty</p>
+                    <button class="btn" onclick="continueShopping()">Continue Shopping</button>
+                </div>
+            </div>
+            <div class="products">
+                <div class="card">
+                    <h3>20% off</h3>
+                    <img src="https://balenciaga.dam.kering.com/m/231ba8064997b736/Medium-5945491IZI31090_F.jpg?v=6"
+                        alt="" style="width: 100%; height: 300px;">
+                    <H5>MEN'S CASH SQUARE FOLDED WALLET</H5>
+                    <br>
+                    <center>
+                        <span><del>$490.00</del> <b>$450.00</b></span>
+                        <br><br>
+                        <button onclick="addToCart()">ADD TO SHOPPING BAG</button>
+                    </center>
+                </div>
+                <div class="card">
+                    <h3>50% off</h3>
+                    <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1694503908/771148_AABXM_1000_001_080_0000_Light-Bi-fold-wallet-with-Gucci-logo.jpg"
+                        alt="" style="width: 100%; height: 300px;">
+                    <H5>BI-FOLD WALLET WITH GUCCI LOGO</H5>
+                    <br>
+                    <center>
+                        <span><del>$1120.00</del> <b>$560.00</b></span>
+                        <br> <br>
+                        <button onclick="addToCart()">ADD TO SHOPPING BAG</button>
+                    </center>
+                </div>
+                <div class="card">
+                    
+                    <img src="https://www.louisvuitton.com/images/is/image/lv/M61695_PM2_Front%20view.png?wid=490&hei=490"
+                        alt="" style="width: auto; height: 300px;">
+                    <H5>M62294
+                        Slender Wallet</H5>
+                    <br>
+                    <center>
+                        <span><del>$490.00</del> <b>$4,50.00</b></span>
+                        <br><br>
+                        <button onclick="addToCart()">ADD TO SHOPPING BAG</button>
+                    </center>
+                </div>
+                <div class="card">
+                    <h3>20% off</h3>
+                    <img src="https://eu.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-multiple-wallet--N00142_PM2_Front%20view.png?wid=730&hei=730"
+                        alt="" style="width: 100%; height: 300px;">
+                    <H5>N00142 Multiple Wallet</H5>
+                    <br>
+                    <center>
+                        <span><del>$2,890.00</del> <b>$2,312.00</b></span>
+                        <br><br>
+                        <button onclick="addToCart()">ADD TO SHOPPING BAG</button>
+                    </center>
+                </div>
+            </div>
+            <a href="catalog.html">
+                <button>View All</button>
+            </a>
+        </section>
+
+        <section class="services">
+            <h1 class="h-primary text-center">Why NexTag?</h1>
+            <hr><br>
+            <div class="row">
+                <div class="service">
+                    <i class="fa fa-truck text-center" style="font-size: 48px;"></i>
+                    <h2 class="h-secondary text-center">Free Shipping</h2>
+                    <p>Free shipping on all orders over $500</p>
+                </div>
+                <div class="service">
+                    <i class="fa fa-credit-card text-center" style="font-size: 48px;"></i>
+                    <h2 class="h-secondary text-center">Secure Payments</h2>
+                    <p>100% secure payment</p>
+                </div>
+                <div class="service">
+                    <i class="fa fa-headphones text-center" style="font-size: 48px;"></i>
+                    <h2 class="h-secondary text-center">24/7 Support</h2>
+                    <p>Customer support 24/7</p>
+                </div>
+        </section>
+
+        <section class="location">
+            <h1 class="h-primary text-center">Meet with Founders</h1>
+            <h4 class="text-center">Meeting Timings: 1:00 PM to 3:00 PM | Every Tuesday, Thursday & Saturday.</h4>
+            <br>
+            <hr><br>
+            <div class="map">
+                <i class="fa fa-map-pin" style="font-size: 24px;"></i><span class="h-secondary text-center">30-A,
+                    Progressive Center, Suite # 202-203, Main Shahra-e-Faisal, near Lal Kothi (house), Karachi,
+                    75400</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.6860089360166!2d67.0743981!3d24.8632639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ea3db108f41%3A0x42acc4507358b160!2sAptech%20Learning%2C%20Shahrah%20e%20Faisal%20Center!5e1!3m2!1sen!2s!4v1738525305973!5m2!1sen!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section class="collaboration">
+            <h1 class="h-primary text-center">In Exclusive Partnership with</h1>
+            <hr><br>
+            <div class="brands">
+                <div class="brand_logo">
+                    <img src="https://download.logo.wine/logo/Louis_Vuitton/Louis_Vuitton-Logo.wine.png" alt="LV"
+                        style="width: 100%; height: 100%">
+                </div>
+                <div class="brand_logo">
+                    <img src="https://download.logo.wine/logo/Gucci/Gucci-Logo.wine.png" alt="gucci"
+                        style="width: 80%; height: 100%">
+                </div>
+                <div class="brand_logo">
+                    <img src="https://logodix.com/logo/6443.png" alt="prada" style="width: 100%; height: 100%">
+                </div>
+                <div class="brand_logo">
+                    <img src="https://arome.mx/cdn/shop/collections/backup-collection-158374756401.png?v=1723492051"
+                        alt="MK" style="width: 100%; height: 100%">
+                </div>
+                <div class="brand_logo">
+                    <img src="https://seeklogo.com/images/B/balenciaga-logo-E5702D8ECC-seeklogo.com.png"
+                        alt="balenciaga" style="width: 100%; height: 100%">
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Our Policies</h3>
+                    <ul>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="return_policy.html">Return Policy</a></li>
+                        <li><a href="shipping_policy.html">Shipping Policy</a></li>
+                        <li><a href="terms_of_services.html">Terms Of Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Phone: +92 313 7248497</li>
+                        <li>Email: khaliltaha116@gmail.com</li>
+                        <li>Address: 30-A, Progressive Center, Karachi, Pakistan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/maanav.mukesh.kataria"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/tahamagsi14"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/maanavkataria"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NexTag. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); 
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

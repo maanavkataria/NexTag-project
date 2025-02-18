@@ -1,0 +1,43 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.policy-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .policy-container {
+        width: 90%;
+        padding: 15px;
+    }
+}

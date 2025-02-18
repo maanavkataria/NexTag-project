@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | NexTag</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/x-icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57e_MjsCKYYivykuCgu9tXOYq4fKNYF4E9w&s">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            height: 590px;
+        }
+
+        .container>h1 {
+            margin-top: 20px;
+        }
+
+        .cart-page {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .empty-cart {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cart-page>button {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <header>
+                <div class="logo">
+                    <h4>NexTag</h4>
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <ul id="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="#">Categories</a>
+                            <div class="dropdown-content">
+                                <a href="male.html">Male</a>
+                                <a href="female.html">Female</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#">Shop By Brands</a>
+                            <div class="dropdown-content">
+                                <a href="lv.html">Louis Vitton</a>
+                                <a href="gucci.html">Gucci</a>
+                                <a href="prada.html">Prada</a>
+                                <a href="michael_kors.html">Michael Kors</a>
+                                <a href="balenciaga.html">Balenciaga</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="login-register">
+                    <a href="login.html"><button>Login</button></a>
+                    <a href="register.html"><button>Register</button></a>
+                </div>
+            </header>
+        </div>
+
+        <h1 class="h-primary text-center">Shopping Cart</h1>
+        <div class="cart-page">
+            <div id="cart-items"></div>
+            <div class="empty-cart" id="empty-message" style="display: none;">
+                <p>Your cart is empty</p>
+                <button class="btn" onclick="continueShopping()">Continue Shopping</button>
+            </div>
+            <button class="btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Our Policies</h3>
+                <ul>
+                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                    <li><a href="return_policy.html">Return Policy</a></li>
+                    <li><a href="shipping_policy.html">Shipping Policy</a></li>
+                    <li><a href="terms_of_services.html">Terms Of Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Phone: +92 313 7248497</li>
+                    <li>Email: maanavkataria@gmail.com</li>
+                    <li>Address: 30-A, Progressive Center, Karachi, Pakistan</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/maanav.mukesh.kataria"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/maanav.mukesh.kataria/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/maanavkataria"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NexTag. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartDisplay() {
+            let cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+
+            if (cart.length === 0) {
+                document.getElementById('empty-message').style.display = 'block';
+            } else {
+                document.getElementById('empty-message').style.display = 'none';
+                cart.forEach((item, index) => {
+                    let div = document.createElement('div');
+                    div.classList.add('cart-item');
+                    div.innerHTML = `${item.name} - <span><del>$${(item.price * 1.25).toFixed(2)}</del> <b>$${item.price.toFixed(2)}</b></span> 
+                    <button onclick="removeItem(${index})">Remove</button>`;
+                    cartItems.appendChild(div);
+                });
+            }
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function continueShopping() {
+            window.location.href = "catalog.html"; // Change to your product page
+        }
+
+        function checkout() {
+            window.location.href = "checkout.html"; // Change to your checkout page
+        }
+
+        updateCartDisplay();
+    </script>
+</body>
+
+</html>

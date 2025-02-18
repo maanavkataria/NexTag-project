@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register | NexTag</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/x-icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57e_MjsCKYYivykuCgu9tXOYq4fKNYF4E9w&s">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .login-link {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-link a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .signup-container {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .signup-container {
+                width: 70%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .signup-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <header>
+                <div class="logo">
+                    <h4>NexTag</h4>
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <nav class="nav">
+                    <ul id="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="#">Categories</a>
+                            <div class="dropdown-content">
+                                <a href="male.html">Male</a>
+                                <a href="female.html">Female</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#">Shop By Brands</a>
+                            <div class="dropdown-content">
+                                <a href="lv.html">Louis Vitton</a>
+                                <a href="gucci.html">Gucci</a>
+                                <a href="prada.html">Prada</a>
+                                <a href="michael_kors.html">Michael Kors</a>
+                                <a href="balenciaga.html">Balenciaga</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="login-register">
+                    <a href="login.html"><button>Login</button></a>
+                    <a href="register.html"><button>Register</button></a>
+                </div>
+            </header>
+        </div>
+
+        <br><br><br><br><br><br><br>
+
+        <div class="signup-container">
+            <h2>Create an Account</h2>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" action="#" method="POST" onsubmit="return validateForm()">
+
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password"
+                    required>
+
+                <button type="submit">Sign Up</button>
+
+                <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+
+            <!-- Success Message -->
+            <div id="successMessage" style="display:none; color: green;">
+                <h3>Form Submitted Successfully!</h3>
+                <p>Thank you for signing up.</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" style="display:none; color: red;">
+                <h3>Error!</h3>
+                <p>There was an issue with the form. Please check your entries.</p>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Our Policies</h3>
+                    <ul>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="return_policy.html">Return Policy</a></li>
+                        <li><a href="shipping_policy.html">Shipping Policy</a></li>
+                        <li><a href="terms_of_services.html">Terms Of Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Phone: +92 313 7248497</li>
+                        <li>Email: khaliltaha116@gmail.com</li>
+                        <li>Address: 30-A, Progressive Center, Karachi, Pakistan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/maanav.mukesh.kataria"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/tahamagsi14"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/maanavkataria"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NexTag. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        function validateForm() {
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+            let successMessage = document.getElementById("successMessage");
+            let errorMessage = document.getElementById("errorMessage");
+
+            if (password !== confirmPassword) {
+                errorMessage.style.display = "block";
+                errorMessage.innerHTML = "<h3>Error!</h3><p>Passwords do not match.</p>";
+                return false;
+            }
+
+            // Store user data in Local Storage
+            let user = { username, email, password };
+            localStorage.setItem("user", JSON.stringify(user));
+
+            successMessage.style.display = "block";
+            errorMessage.style.display = "none";
+
+            // Redirect to login.html after 2 seconds
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 2000);
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
